@@ -4,61 +4,165 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>روابطي الرسمية</title>
-  <!-- Font Awesome -->
+
+  <!-- ✅ أيقونات Font Awesome -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+
+  <!-- ✅ خط جميل من Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@700&display=swap" rel="stylesheet">
+
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      text-align: center;
-      background: yellow;
-      padding: 50px;
-    }
+    /* 🌌 خلفية الصفحة */
+body {
+  margin: 0;
+  height: 100vh;             /* يغطي الشاشة كاملة */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;   /* نوسط المحتوى عمودياً */
+  align-items: center;       /* نوسط أفقياً */
+  overflow: hidden;          /* يمنع أي Scroll */
+  background: url('6adda513a5f79f23d2d018efe64ae72e.jpg') no-repeat center center fixed;
+  background-size: cover;
+  font-family: 'Lobster', cursive;
+  color: white;
+  padding-top: 10px;   /* زدنا هذي باش نطلعو العنوان للفوق */
+  body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.4); /* ضل خفيف */
+  z-index: -1;
+  }
+}
+
+    /* 🟡 العنوان */
     h1 {
-      margin-bottom: 30px;
+/* خط مزخرف */
+ font-family: 'Great Vibes', cursive;
+color: #fff;
+text-shadow: 0 0 15px #00f, 0 0 50px #00f;
+  text-align: flex-start;
+      font-size: 70px;
+      margin: 0;           /* باش مايبقاش فيه فراغ من الفوق */
+margin-bottom: -20px; /* نخلي مسافة صغيرة بين العنوان والمربعات */
+  position: relative;
+  top: -50px;
     }
+
+    /* 📋 القائمة الرئيسية */
     ul {
       list-style: none;
       padding: 0;
     }
     li {
-      margin: 15px 0;
+      margin:6px 0;
     }
+
+    /* 🟦 الأزرار (الإطارات) */
     a {
+      display: flex;                  /* باش الأيقونة + النص يكونوا في خط واحد */
+      align-items: center;            /* وسط عمودي */
+      justify-content: center;        /* وسط أفقي */
+      width: 290px;                   /* العرض */
+      height: 65px;                   /* الطول */
+      border-radius: 22px;            /* الزوايا مدورة */
+      font-size: 40px;                /* حجم الكتابة */
+      font-weight: bold;              /* كتابة خسينة */
       text-decoration: none;
-      font-size: 20px;
-      color: #333;
+      background: transparent;
+      border: 2px solid #fff;         /* الإطار أبيض */
+      color: #fff;                    /* النص أبيض */
+      position: relative;
+      z-index: 0;
       transition: 0.3s;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
+   box-shadow: 0 4px 15px rgba(0,0,0,0.4);
     }
+    a i {
+      margin-right: 10px;             /* مسافة بين الأيقونة والكتابة */
+      font-size: 40px;                /* حجم الأيقونة */
+    }
+a i {
+  width: 25px;         /* نخلي عرض ثابت */
+  height: 25px;        /* نخلي طول ثابت */
+  font-size: 30px;     /* حجم موحد */
+  display: flex;       
+  align-items: center; 
+  justify-content: flex-start;  /* يطلع المحتوى لفوق */
+  margin-right: 15px;  /* مسافة بين اللوجو والنص */
+}
+    /* 🌈 التوهج (Glow) */
+    .instagram::before,
+    .facebook::before,
+    .snapchat::before,
+    .whatsapp::before,
+    .telegram::before,
+    .threads::before,
+    .phone::before,
+    .email::before {
+      content: "";
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      right: -2px;
+      bottom: -2px;
+      border-radius: 12px;
+      z-index: -1;
+      filter: blur(10px);
+      opacity: 0.8;
+      animation: neonGlow 6s linear infinite;
+    }
+
+    /* 🎨 ألوان Glow لكل تطبيق */
+    .instagram::before { background: #E1306C; }   /* وردي */
+    .facebook::before  { background: #1877F2; }   /* أزرق */
+    .snapchat::before  { background: #FFFC00; }   /* أصفر */
+    .whatsapp::before  { background: #25D366; }   /* أخضر */
+    .telegram::before  { background: #0088cc; }   /* سماوي */
+    .threads::before   { background: #ffffff; }   /* أبيض */
+    .phone::before     { background: #888; }      /* رمادي */
+    .email::before     { background: #EA4335; }   /* أحمر */
+
+    /* ✨ حركة التوهج */
+    @keyframes neonGlow {
+      0%   { opacity: 0.5; }
+      50%  { opacity: 1; }
+      100% { opacity: 0.5; }
+    }
+
+    /* 🔄 حركة عند مرور الفأرة */
     a:hover {
-      color: #0077b5;
+      transform: scale(1.05);
     }
-    i, svg {
-      vertical-align: middle;
-    }
-    svg {
-      width: 22px;
-      height: 22px;
+    .subtitle {
+  margin-top: 80;
+  margin-bottom: -60px;
+  font-size: 22px;
+  font-family: 'Cairo', sans-serif; /* خط أنيق */
+  color: #fff; /* أبيض */
+  text-shadow: 0 0 50px #00eaff; /* توهج أزرق خفيف */
+  text-align: center;
+        position: relative;
+  top: -50px
     }
   </style>
 </head>
 <body>
-  <h1>Møñçëf Nãîli</h1>
+
+  <!-- 🟡 العنوان الرئيسي -->
+  <h1>Møñçëf Nãîlī</h1>
+  <h2 class="subtitle">My Official Links⟱</h2>
+
+  <!-- 📋 قائمة الروابط -->
   <ul>
-    <li><a href="https://instagram.com/USERNAME" target="_blank"><i class="fab fa-instagram"></i> Instagram إنستغرام</a></li>
-    <li><a href="https://facebook.com/USERNAME" target="_blank"><i class="fab fa-facebook"></i> Facebook فيسبوك</a></li>
-    <li><a href="https://snapchat.com/add/USERNAME" target="_blank"><i class="fab fa-snapchat"></i> Snapchat سنابشات</a></li>
-    <li><a href="https://wa.me/PHONE" target="_blank"><i class="fab fa-whatsapp"></i> Whatsapp واتساب</a></li>
-    <li><a href="https://t.me/USERNAME" target="_blank"><i class="fab fa-telegram"></i> Telegram تيليجرام</a></li>
-<li>
-  <a href="https://www.threads.net/@USERNAME" target="_blank">
-    <i class="fa-brands fa-threads"></i> Threads ثريدز
-  </a>
-</li>
-    <li><a href="tel:PHONE"><i class="fas fa-phone"></i> إتصل بي</a></li>
-    <li><a href="mailto:EMAIL@example.com"><i class="fas fa-envelope"></i> إيميل</a></li>
+    <li><a href="https://instagram.com/USERNAME" target="_blank" class="instagram"><i class="fab fa-instagram"></i> Instagram</a></li>
+    <li><a href="https://facebook.com/USERNAME" target="_blank" class="facebook"><i class="fab fa-facebook"></i> Facebook</a></li>
+    <li><a href="https://snapchat.com/add/USERNAME" target="_blank" class="snapchat"><i class="fab fa-snapchat"></i> Snapchat</a></li>
+    <li><a href="https://wa.me/PHONE" target="_blank" class="whatsapp"><i class="fab fa-whatsapp"></i> Whatsapp</a></li>
+    <li><a href="https://t.me/USERNAME" target="_blank" class="telegram"><i class="fab fa-telegram"></i> Telegram</a></li>
+    <li><a href="https://www.threads.net/@USERNAME" target="_blank" class="threads"><i class="fa-brands fa-threads"></i> Threads</a></li>
+    <li><a href="tel:PHONE" class="phone"><i class="fas fa-phone"></i> Call me </a></li>
+    <li><a href="mailto:EMAIL@example.com" class="email"><i class="fas fa-envelope"></i> Email</a></li>
   </ul>
+
 </body>
 </html>
